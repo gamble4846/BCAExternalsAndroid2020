@@ -4,7 +4,8 @@ import android.app.Activity
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
-class MyListAdapter(private val context: Activity, private val title: MutableList<String>, private val SubText1: MutableList<String>, private val SubText2: MutableList<String>, private val SubText3: MutableList<String>)
+class MyListAdapter(private val context: Activity, private val title: MutableList<String>, private val SubText1: MutableList<String>,
+                    private val SubText2: MutableList<String>, private val SubText3: MutableList<String>)
     : ArrayAdapter<String>(context, R.layout.row, title) {
 
 //17bca076
