@@ -1,3 +1,4 @@
+//17bca076
 package com.gamble846.bcaexternals076
 
 import android.content.ContentValues
@@ -8,7 +9,7 @@ import android.widget.Toast
 
 val DATABASE_NAME ="MyDB"
 val TABLE_NAME="Users"
-
+//17bca076
 val COL_USERNAME = "username"
 val COL_PASSWORD = "password"
 val COL_ID = "id"
@@ -18,6 +19,7 @@ class DataBaseHandler(var context: Context) : SQLiteOpenHelper(context,DATABASE_
 
         val createTable = "CREATE TABLE " + TABLE_NAME + " (" +
                 COL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+//17bca076
                 COL_USERNAME + " VARCHAR(256)," +
                 COL_PASSWORD + " VARCHAR(256))"
 
@@ -27,6 +29,7 @@ class DataBaseHandler(var context: Context) : SQLiteOpenHelper(context,DATABASE_
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+//17bca076
     }
 
     fun insertData(user: User) {
@@ -36,6 +39,7 @@ class DataBaseHandler(var context: Context) : SQLiteOpenHelper(context,DATABASE_
         cv.put(COL_PASSWORD, user.password)
         var result = db.insert(TABLE_NAME, null, cv)
         if (result == -1.toLong())
+//17bca076
             Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show()
         else
             Toast.makeText(context, "Success", Toast.LENGTH_SHORT).show()
@@ -45,6 +49,7 @@ class DataBaseHandler(var context: Context) : SQLiteOpenHelper(context,DATABASE_
         var list : MutableList<User> = ArrayList()
 
         val db = this.readableDatabase
+//17bca076
         val query = "Select * from " + TABLE_NAME
         val result = db.rawQuery(query,null)
         if(result.moveToFirst()){
@@ -54,6 +59,7 @@ class DataBaseHandler(var context: Context) : SQLiteOpenHelper(context,DATABASE_
                 user.username = result.getString(result.getColumnIndex(COL_USERNAME))
                 user.password = result.getString(result.getColumnIndex(COL_PASSWORD))
                 list.add(user)
+//17bca076
             }while (result.moveToNext())
         }
 
@@ -62,3 +68,4 @@ class DataBaseHandler(var context: Context) : SQLiteOpenHelper(context,DATABASE_
         return list
     }
 }
+//17bca076

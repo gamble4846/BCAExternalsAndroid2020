@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_log_in.*
 
+//17bca076
 class LogInActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,6 +17,7 @@ class LogInActivity : AppCompatActivity() {
         registerbtn.setOnClickListener{
             var intent= Intent(this,Register::class.java)
             startActivity(intent)
+//17bca076
         }
 
         fun Checking(username_check : String,password_check : String) : Boolean {
@@ -25,6 +27,7 @@ class LogInActivity : AppCompatActivity() {
             for (i in 0..(data.size - 1)) {
                 if(data.get(i).username.toString() == username_check && data.get(i).password.toString() == password_check)
                     m++;
+//17bca076
             }
             return m>0
         }
@@ -34,6 +37,7 @@ class LogInActivity : AppCompatActivity() {
             {
                 if(Checking(username.text.toString(),password.text.toString()))
                 {
+//17bca076
                     Toast.makeText(this,"Login Successfull!!", Toast.LENGTH_LONG).show()
                     var preference=getSharedPreferences("MyPref", Context.MODE_PRIVATE)
                     var editor=preference.edit()
@@ -43,6 +47,7 @@ class LogInActivity : AppCompatActivity() {
                     startActivity(intent)
                     finish()
                 }
+//17bca076
                 else
                 {
                     Toast.makeText(this,"Invalid Username/Password", Toast.LENGTH_LONG).show()
@@ -52,6 +57,7 @@ class LogInActivity : AppCompatActivity() {
             {
                 Toast.makeText(this,"Please Enter Data!!", Toast.LENGTH_LONG).show()
             }
+//17bca076
         }
     }
 }

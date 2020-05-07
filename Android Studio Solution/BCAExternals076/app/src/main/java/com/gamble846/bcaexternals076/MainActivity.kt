@@ -7,7 +7,7 @@ import android.os.Bundle
 import android.os.Handler
 
 class MainActivity : AppCompatActivity() {
-
+//17bca076
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity() {
             var str=preference.getString("uname","Wrong")
             if(str.equals("Wrong")) {
                 var intent = Intent(this, LogInActivity::class.java)
+//17bca076
                 startActivity(intent)
                 finish()
             }
@@ -26,6 +27,7 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intent)
                 finish()
             }
+//17bca076
         },
                 3000)
     }

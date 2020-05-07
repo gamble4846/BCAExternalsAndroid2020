@@ -7,7 +7,7 @@ import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_insert_electricity_bill.*
 
 class insertElectricityBill : AppCompatActivity() {
-
+//17bca076
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_insert_electricity_bill)
@@ -17,6 +17,7 @@ class insertElectricityBill : AppCompatActivity() {
             if(Customer_No.text.toString().length>0 &&
                 Customer_Name.text.toString().length>0 &&
                 No_of_units_consumed.text.toString().length>0 &&
+//17bca076
                 Price_per_unit.text.toString().length>0)
             {
                 var elecbill = ElecBill(
@@ -26,6 +27,7 @@ class insertElectricityBill : AppCompatActivity() {
                     Price_per_unit.text.toString()
                 )
                 var db = DataBaseHandler_ElecBills(this)
+//17bca076
                 db.insertData(elecbill)
 
                 var intent = Intent(this, HomeActivity::class.java)
@@ -35,6 +37,7 @@ class insertElectricityBill : AppCompatActivity() {
             else
             {
                 Toast.makeText(this,"Please Enter Data!!", Toast.LENGTH_LONG).show()
+//17bca076
             }
         }
 
@@ -44,5 +47,6 @@ class insertElectricityBill : AppCompatActivity() {
             finish()
         }
 
+//17bca076
     }
 }

@@ -7,7 +7,7 @@ import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_register.*
 
 class Register : AppCompatActivity() {
-
+//17bca076
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
@@ -17,6 +17,7 @@ class Register : AppCompatActivity() {
             {
                 var user = User(username_reg.text.toString(),password_reg.text.toString())
                 var db = DataBaseHandler(this)
+//17bca076
                 db.insertData(user)
 
                 var intent = Intent(this, LogInActivity::class.java)
@@ -26,6 +27,7 @@ class Register : AppCompatActivity() {
             else
             {
                 Toast.makeText(this,"Please Enter Data!!", Toast.LENGTH_LONG).show()
+//17bca076
             }
         }
 
@@ -35,4 +37,5 @@ class Register : AppCompatActivity() {
             finish()
         }
     }
+//17bca076
 }

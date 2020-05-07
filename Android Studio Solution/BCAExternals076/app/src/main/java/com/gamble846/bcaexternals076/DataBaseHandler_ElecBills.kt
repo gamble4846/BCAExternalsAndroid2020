@@ -1,3 +1,4 @@
+//17bca076
 package com.gamble846.bcaexternals076
 
 import android.content.ContentValues
@@ -6,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import android.widget.Toast
 
+//17bca076
 val DATABASE_NAME2 ="MyDB2"
 val TABLE_NAME2="ElecBills"
 val COL_Customer_No= "Customer_No"
@@ -15,7 +17,7 @@ val COL_Price_per_unit = "Price_per_unit"
 
 class DataBaseHandler_ElecBills(var context: Context) : SQLiteOpenHelper(context,DATABASE_NAME2,null,1) {
     override fun onCreate(db: SQLiteDatabase?) {
-
+//17bca076
         val createTable = "CREATE TABLE " + TABLE_NAME2 + " (" +
                 COL_Customer_No + " VARCHAR(256)," +
                 COL_Customer_Name + " VARCHAR(256)," +
@@ -25,7 +27,7 @@ class DataBaseHandler_ElecBills(var context: Context) : SQLiteOpenHelper(context
         db?.execSQL(createTable)
 
     }
-
+//17bca076
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
@@ -35,6 +37,7 @@ class DataBaseHandler_ElecBills(var context: Context) : SQLiteOpenHelper(context
         var cv = ContentValues()
         cv.put(COL_Customer_No, elebill.Customer_No)
         cv.put(COL_Customer_Name, elebill.Customer_Name)
+//17bca076
         cv.put(COL_No_of_units_consumed, elebill.No_of_units_consumed)
         cv.put(COL_Price_per_unit, elebill.Price_per_unit)
 
@@ -44,7 +47,7 @@ class DataBaseHandler_ElecBills(var context: Context) : SQLiteOpenHelper(context
         else
             Toast.makeText(context, "Success", Toast.LENGTH_SHORT).show()
     }
-
+//17bca076
     fun readData(): MutableList<ElecBill> {
         var list: MutableList<ElecBill> = ArrayList()
 
@@ -54,6 +57,7 @@ class DataBaseHandler_ElecBills(var context: Context) : SQLiteOpenHelper(context
         if (result.moveToFirst()) {
             do {
                 var ElecBillsVar = ElecBill()
+//17bca076
                 ElecBillsVar.Customer_No = result.getString(result.getColumnIndex(COL_Customer_No))
                 ElecBillsVar.Customer_Name =
                     result.getString(result.getColumnIndex(COL_Customer_Name))
@@ -63,6 +67,7 @@ class DataBaseHandler_ElecBills(var context: Context) : SQLiteOpenHelper(context
                     result.getString(result.getColumnIndex(COL_Price_per_unit))
                 list.add(ElecBillsVar)
             } while (result.moveToNext())
+//17bca076
         }
 
         result.close()

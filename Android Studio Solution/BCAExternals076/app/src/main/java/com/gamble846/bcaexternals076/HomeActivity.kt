@@ -7,6 +7,7 @@ import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.activity_register.*
 
+//17bca076
 class HomeActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,6 +17,7 @@ class HomeActivity : AppCompatActivity() {
         var preference=getSharedPreferences("MyPref", Context.MODE_PRIVATE)
         var editor=preference.edit()
 
+//17bca076
         var str=preference.getString("uname","Wrong")
         usernametext.text="Welcome :  $str"
 
@@ -25,6 +27,7 @@ class HomeActivity : AppCompatActivity() {
         }
 
         DisplayElectricityBilldetail.setOnClickListener{
+//17bca076
             var intent = Intent(this, DisplayElectricityBill::class.java)
             startActivity(intent)
         }
@@ -34,6 +37,7 @@ class HomeActivity : AppCompatActivity() {
             editor.commit()
 
             var intent = Intent(this, LogInActivity::class.java)
+//17bca076
             startActivity(intent)
             finish()
         }
